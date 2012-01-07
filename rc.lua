@@ -228,6 +228,7 @@ globalkeys = awful.util.table.join(
     --awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
     awful.key({ modkey },            "r",     function () awful.util.spawn( "dmenu_run" ) end),
     awful.key({ modkey },            "g",     function () awful.util.spawn( "go-win" ) end),
+    awful.key({ }, "Print", function () awful.util.spawn("walma-screenshot") end),
 
     awful.key({ modkey }, "x",
               function ()
