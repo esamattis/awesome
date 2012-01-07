@@ -18,7 +18,7 @@ require("debian.menu")
 beautiful.init(awful.util.getdir("config") .. "/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "gnome-terminal"
+terminal = "gnome-terminal --hide-menubar"
 -- editor = os.getenv("EDITOR") or "editor"
 editor = "vim"
 editor_cmd = terminal .. " -e " .. editor
@@ -56,12 +56,12 @@ for s = 1, screen.count() do
     -- Each screen has its own tag table.
     tags[s] = awful.tag({ 1,
                           2,
-                          3, 
-                          4, 
-                          5, 
-                          6, 
-                          7, 
-                          8, 
+                          3,
+                          4,
+                          5,
+                          6,
+                          7,
+                          8,
                           9 }, s, layouts[1])
 end
 -- }}}
@@ -311,8 +311,6 @@ awful.rules.rules = {
                      focus = true,
                      keys = clientkeys,
                      buttons = clientbuttons } },
-    { rule = { class = "MPlayer" },
-      properties = { floating = true } },
     { rule = { class = "pinentry" },
       properties = { floating = true } },
     { rule = { class = "gimp" },
@@ -327,7 +325,7 @@ awful.rules.rules = {
 -- Signal function to execute when a new client appears.
 client.add_signal("manage", function (c, startup)
     -- Add a titlebar
-    -- awful.titlebar.add(c, { modkey = modkey })
+     awful.titlebar.add(c, { modkey = modkey, height = "14" })
 
     -- Enable sloppy focus
     c:add_signal("mouse::enter", function(c)
@@ -340,7 +338,7 @@ client.add_signal("manage", function (c, startup)
     if not startup then
         -- Set the windows at the slave,
         -- i.e. put it at the end of others instead of setting it master.
-        -- awful.client.setslave(c)
+         awful.client.setslave(c)
 
         -- Put windows in a smart way, only if they does not set an initial position.
         if not c.size_hints.user_position and not c.size_hints.program_position then
