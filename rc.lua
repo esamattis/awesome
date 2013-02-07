@@ -319,7 +319,7 @@ awful.rules.rules = {
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
     { rule = { role = "pop\-up" },
-       properties = { floating = true } },
+       properties = { floating = true, ontop = true } },
     { rule = { class = "webmenu" },
        properties = { floating = true } }
 }
