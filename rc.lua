@@ -320,8 +320,8 @@ awful.rules.rules = {
     --   properties = { tag = tags[1][2] } },
     { rule = { role = "pop\-up" },
        properties = { floating = true, ontop = true } },
-    { rule = { class = "webmenu" },
-       properties = { floating = true } }
+    { rule = { name = "Webmenu" },
+       properties = { floating = true, ontop = true } }
 }
 -- }}}
 
