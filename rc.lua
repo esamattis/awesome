@@ -1,5 +1,6 @@
 -- Standard awesome library
 require("awful")
+require("eminent")
 require("awful.autofocus")
 require("awful.rules")
 -- Theme handling library
